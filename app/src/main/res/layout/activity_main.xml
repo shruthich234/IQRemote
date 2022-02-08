@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical" >
+
+
+    <Button
+        android:id="@+id/ShowEmployees"
+        android:onClick="showEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ShowEmployees" />
+    <Button
+        android:id="@+id/CreateEmployees"
+        android:onClick="createEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CreateEmployees" />
+    <Button
+        android:id="@+id/UpdateEmployees"
+        android:onClick="updateEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/UpdateEmployees" />
+    <Button
+        android:id="@+id/DeleteEmployees"
+        android:onClick="deleteEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/DeleteEmployees" />
+</LinearLayout>

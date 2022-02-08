@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CRUDApplication</string>
+    <string name="emp_id">EmployeeID</string>
+    <string name="emp_name">Name</string>
+    <string name="emp_dept">Department</string>
+    <string name="emp_salary">Salary</string>
+    <string name="emp_location">City</string>
+    <string name="submit">Submit</string>
+    <string name="ShowEmployees">ShowEmployees</string>
+    <string name="CreateEmployees">CreateEmployees</string>
+
+    <string name="UpdateEmployees">UpdateEmployees</string>
+
+    <string name="DeleteEmployees">DeleteEmployees</string>
+
+</resources>

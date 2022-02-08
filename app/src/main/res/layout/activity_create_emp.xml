@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/empid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emp_id" />
+    <EditText
+        android:id="@+id/empname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emp_name" />
+    <EditText
+        android:id="@+id/empsalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emp_salary" />
+    <EditText
+        android:id="@+id/empdept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emp_dept" />
+    <EditText
+        android:id="@+id/emplocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/emp_location" />
+    <Button
+        android:id="@+id/formsubmit"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/submit" />
+</LinearLayout>
