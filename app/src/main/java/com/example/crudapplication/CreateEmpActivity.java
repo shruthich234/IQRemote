@@ -2,10 +2,14 @@ package com.example.crudapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -58,7 +62,7 @@ public class CreateEmpActivity extends AppCompatActivity implements View.OnClick
         String empDepartment = employeeDepartment.getText().toString();
         String empLocation = employeeLocation.getText().toString();
 
-        Toast.makeText(getBaseContext(), "Welcome" + empId + empName, Toast.LENGTH_LONG);
+        Toast.makeText(getBaseContext(), "Welcome" + empId + empName, Toast.LENGTH_LONG).show();
 
         DBHandler dbHandler = new DBHandler(getBaseContext());
         SQLiteDatabase db = dbHandler.getWritableDatabase();
@@ -73,6 +77,51 @@ public class CreateEmpActivity extends AppCompatActivity implements View.OnClick
         long rowId = db.insert(DBHandler.TBL_NAME, null, values);
 
         Log.i(TAG, "Insert successful..");
+
+       /* //Dialog alert with success msg
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Employee created successfully.Do you want to view details?");
+        builder.setCancelable(true);
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                Toast.makeText(getBaseContext(),
+                        "Employee Details are :" + empId + " "+ empName + " "+ empSalary + " " + empDepartment + " " + empLocation, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+*/
+
+        //Progress dialog
+        ProgressDialog progressDialog = new ProgressDialog(getApplicationContext());
+        progressDialog.setMessage("Loading..");
+        progressDialog.show();
+        //Dismiss after set timeperiod
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressDialog.dismiss();
+            }
+        }, 5000);//5 secs
+
+
+        //Add AsyncTask implementation
+
+
 
         employeeId.getText().clear();
         employeeDepartment.getText().clear();
