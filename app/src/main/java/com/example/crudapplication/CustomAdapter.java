@@ -40,9 +40,16 @@ public class CustomAdapter extends BaseAdapter {
         view = inflater.inflate(R.layout.activity_list_emp, null);
         TextView id = view.findViewById(R.id.id);
         TextView name = view.findViewById(R.id.name);
+        TextView salary = view.findViewById(R.id.salary);
+        TextView department = view.findViewById(R.id.department);
+        TextView location = view.findViewById(R.id.location);
 
         id.setText(employees[i].getId());
         name.setText(employees[i].getName());
+        salary.setText(employees[i].getSalary());
+        location.setText(employees[i].getLocation());
+        department.setText(employees[i].getDepartment());
+
         return view;
     }
 }
