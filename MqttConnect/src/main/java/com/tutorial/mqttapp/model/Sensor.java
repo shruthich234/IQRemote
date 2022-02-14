@@ -10,7 +10,7 @@ public class Sensor {
 	IMqttClient client;
 
 	String msg = "DoorClosed";
-	String topicName = "test";
+	String topicName = "iqcloud";
 
 	public Sensor(IMqttClient client) {
 		this.client = client;

@@ -13,11 +13,15 @@ import com.tutorial.mqttapp.model.Sensor;
 
 public class Driver {
 
-	public static void main(String[] args) throws MqttSecurityException, MqttException {
+	public static void main(String[] args) throws MqttSecurityException, MqttException, InterruptedException {
 
 		System.out.println("Mqtt connect application..");
+
+		MqttListener listener = new MqttListener();
+
 		Publisher pub = new Publisher();
 		pub.connect();
+		Thread.sleep(5000);
 		pub.publish();
 		System.out.println("Application executed..");
 
@@ -43,6 +47,7 @@ class Publisher {
 		options.setCleanSession(true);
 		options.setConnectionTimeout(10);
 		publisher.connect(options);
+
 		System.out.println("Connection established successfully..");
 	}
 
@@ -52,4 +57,3 @@ class Publisher {
 	}
 
 }
-
